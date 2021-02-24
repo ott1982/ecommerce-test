@@ -22,6 +22,6 @@ public class PriceServiceImpl extends CommonServiceImpl
     public Optional<Price> getPriceByDates(String date, Integer productId
             , Integer idCadena) {
         logger.debug("getting price");
-        return Optional.empty();
+        return priceRepository.findAll().stream().findAny();
     }
 }

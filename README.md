@@ -85,3 +85,8 @@ Diseño y construcción del servicio.
 Calidad de Código.
 Resultados correctos en los test.
 ```
+```
+curl -vs http://localhost:8080/price\?date\=aaaaa\&productid\=3\&idcadena\=5 | jq .
+```
+
+[H2 console](http://localhost:8080/h2-console)

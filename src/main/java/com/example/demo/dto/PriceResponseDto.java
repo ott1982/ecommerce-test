@@ -7,16 +7,16 @@ import java.time.LocalDateTime;
 
 public class PriceResponseDto extends CommonDto {
 
-    @JsonProperty("productId")
+    @JsonProperty("productid")
     private final Integer productId;
 
-    @JsonProperty("idCadena")
+    @JsonProperty("idcadena")
     private final Integer idCadena;
 
-    @JsonProperty("startDate")
+    @JsonProperty("startdate")
     private final String startDate;
 
-    @JsonProperty("endDate")
+    @JsonProperty("enddate")
     private final String endDate;
 
     @JsonProperty("price")
