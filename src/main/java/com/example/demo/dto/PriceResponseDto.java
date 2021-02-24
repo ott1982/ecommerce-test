@@ -1,10 +1,11 @@
 package com.example.demo.dto;
 
+import com.example.demo.entity.Price;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
 
-public class PriceResponseDto {
+public class PriceResponseDto extends CommonDto {
 
     @JsonProperty("productId")
     private final Integer productId;
@@ -21,7 +22,7 @@ public class PriceResponseDto {
     @JsonProperty("price")
     private final Double price;
 
-    public PriceResponseDto(Integer productId, Integer idCadena
+    private PriceResponseDto(Integer productId, Integer idCadena
             , LocalDateTime startDate, LocalDateTime endDate, Double price) {
         this.productId = productId;
         this.idCadena = idCadena;
@@ -48,5 +49,10 @@ public class PriceResponseDto {
 
     public Double getPrice() {
         return price;
+    }
+
+    public static PriceResponseDto of(Price price) {
+        return new PriceResponseDto(price.getProductId(), price.getBrandId()
+                , price.getStartDate(), price.getEndDate(), price.getPrice());
     }
 }

@@ -1,11 +1,20 @@
 package com.example.demo.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity(name = "PRICE")
-public class Price {
+public class Price extends CommonEntity {
+
+    @Id
+    @Column(name = "PRICE_UUID")
+    @GenericGenerator(name = "uuid", strategy = "uuid4")
+    private UUID priceUuid;
 
     @Column(name = "BRAND_ID")
     private Integer brandId;
@@ -109,5 +118,13 @@ public class Price {
 
     public void setCurr(String curr) {
         this.curr = curr;
+    }
+
+    public UUID getPriceUuid() {
+        return priceUuid;
+    }
+
+    public void setPriceUuid(UUID priceUuid) {
+        this.priceUuid = priceUuid;
     }
 }
