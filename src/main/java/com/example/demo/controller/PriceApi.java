@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @RestController
@@ -37,7 +38,7 @@ public class PriceApi extends CommonContoller {
                     , date, productId, idCadena);
         }
         Optional<Price> optionalPrice = priceService
-                .getPriceByDates(date, productId, idCadena);
+                .getPriceByDates(LocalDateTime.parse(date), productId, idCadena);
         if (optionalPrice.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

@@ -86,7 +86,7 @@ Calidad de Código.
 Resultados correctos en los test.
 ```
 ```
-curl -vs http://localhost:8080/price\?date\=aaaaa\&productid\=3\&idcadena\=5 | jq .
+curl -vs http://localhost:8080/price\?date\=2020-06-15T16:00:00\&productid\=35455\&idcadena\=1 | jq .	
 ```
 
 [H2 console](http://localhost:8080/h2-console)

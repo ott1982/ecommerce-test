@@ -6,6 +6,7 @@ import com.example.demo.service.PriceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class PriceServiceImpl extends CommonServiceImpl
@@ -19,9 +20,11 @@ public class PriceServiceImpl extends CommonServiceImpl
     }
 
     @Override
-    public Optional<Price> getPriceByDates(String date, Integer productId
+    public Optional<Price> getPriceByDates(LocalDateTime date, Integer productId
             , Integer idCadena) {
         logger.debug("getting price");
-        return priceRepository.findAll().stream().findAny();
+        return priceRepository.searchPrice(
+                date.toString(),
+                productId, idCadena);
     }
 }
