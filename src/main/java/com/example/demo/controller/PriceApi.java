@@ -32,13 +32,13 @@ public class PriceApi extends CommonContoller {
     @GetMapping
     public ResponseEntity<PriceResponseDto> getPrice(@RequestParam(
             "date") String date, @RequestParam("productid") Integer productId
-            , @RequestParam("idcadena") Integer idCadena) {
+            , @RequestParam("brandid") Integer brandId) {
         if (logger.isDebugEnabled()) {
-            logger.debug("getPrice:: date: {}; productId: {}; idCadena: {}"
-                    , date, productId, idCadena);
+            logger.debug("getPrice:: date: {}; productId: {}; brandId: {}"
+                    , date, productId, brandId);
         }
         Optional<Price> optionalPrice = priceService
-                .getPriceByDates(LocalDateTime.parse(date), productId, idCadena);
+                .getPriceByDates(LocalDateTime.parse(date), productId, brandId);
         if (optionalPrice.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

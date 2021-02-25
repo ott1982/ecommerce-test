@@ -20,11 +20,10 @@ public class PriceServiceImpl extends CommonServiceImpl
     }
 
     @Override
-    public Optional<Price> getPriceByDates(LocalDateTime date, Integer productId
-            , Integer idCadena) {
+    public Optional<Price> getPriceByDates(LocalDateTime date
+            , Integer productId, Integer brandId) {
         logger.debug("getting price");
-        return priceRepository.searchPrice(
-                date.toString(),
-                productId, idCadena);
+        return priceRepository.searchPrice(date.toString()
+                , productId, brandId);
     }
 }

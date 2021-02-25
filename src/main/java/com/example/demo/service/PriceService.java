@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface PriceService {
 
-    Optional<Price> getPriceByDates(LocalDateTime date, Integer productId
-            , Integer idCadena);
+    Optional<Price> getPriceByDates(LocalDateTime date
+            , Integer productId, Integer brandId);
 }

@@ -1,5 +1,7 @@
 # ecommerce-test
 
+Dummy ecommerce test.
+
 ```
 En la base de datos de comercio electrónico de la compañía disponemos de la tabla PRICES que refleja el precio final (pvp) y la tarifa que aplica a un producto de una cadena entre unas fechas determinadas. A continuación se muestra un ejemplo de la tabla con los campos relevantes:
 
@@ -85,8 +87,20 @@ Diseño y construcción del servicio.
 Calidad de Código.
 Resultados correctos en los test.
 ```
-```
-curl -vs http://localhost:8080/price\?date\=2020-06-15T16:00:00\&productid\=35455\&idcadena\=1 | jq .	
-```
+# Requirements
 
+* Gradle.
+* Java 11.
+
+# Run
+
+```
+gradle clean bootRun
+```
+# CURL's
+
+```
+curl -vs http://localhost:8080/price\?date\=2020-06-15T16:00:00\&productid\=35455\&brandid\=1 | jq .	
+```
+# Consola H2
 [H2 console](http://localhost:8080/h2-console)

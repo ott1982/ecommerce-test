@@ -10,8 +10,8 @@ public class PriceResponseDto extends CommonDto {
     @JsonProperty("productid")
     private final Integer productId;
 
-    @JsonProperty("idcadena")
-    private final Integer idCadena;
+    @JsonProperty("brandid")
+    private final Integer brandId;
 
     @JsonProperty("startdate")
     private final String startDate;
@@ -22,10 +22,10 @@ public class PriceResponseDto extends CommonDto {
     @JsonProperty("price")
     private final Double price;
 
-    private PriceResponseDto(Integer productId, Integer idCadena
+    private PriceResponseDto(Integer productId, Integer brandId
             , LocalDateTime startDate, LocalDateTime endDate, Double price) {
         this.productId = productId;
-        this.idCadena = idCadena;
+        this.brandId = brandId;
         this.startDate = startDate.toString();
         this.endDate = endDate.toString();
         this.price = price;
@@ -35,8 +35,8 @@ public class PriceResponseDto extends CommonDto {
         return productId;
     }
 
-    public Integer getIdCadena() {
-        return idCadena;
+    public Integer getBrandId() {
+        return brandId;
     }
 
     public String getStartDate() {
